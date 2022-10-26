@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--color-options-bar-bg);
 }
 .left-option-bar-container .el-menu--collapse {
     width: 2.2rem;
@@ -53,6 +53,6 @@
 }
 .left-option-bar-container .el-menu--collapse .el-icon {
     size: 1rem;
-    color: black;
+    color: var(--color-icon);
 }
 </style>

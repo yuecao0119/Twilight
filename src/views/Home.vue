@@ -84,7 +84,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   position: relative;
   display: flex;
   flex: 1 1 0%;
-  background: white;
+  background: var(--color-bg);
 }
 
 .twilight-app-container .el-header {
@@ -96,7 +96,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   flex-shrink: 0;
   position: relative;
   z-index: 111;
-  background: #f6f8fa;
+  background: var(--color-aside-bg);
   transition: box-shadow 300ms ease 0s;
   box-shadow: rgb(0 0 0 / 2%) -1px 0px 0px 0px inset;
 }
