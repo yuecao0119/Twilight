@@ -36,7 +36,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
       <el-container>
         <!-- 头部工具栏 -->
         <el-header>
-          <div class="app-toolbar">
+          <div class="file-toolbar">
             <el-dropdown>
               <el-icon style="margin-right: 8px; margin-top: 1px"
                 ><IEpSetting
@@ -87,10 +87,6 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   background: var(--color-bg);
 }
 
-.twilight-app-container .el-header {
-  position: relative;
-}
-
 .twilight-app-container .el-aside {
   flex-grow: 0;
   flex-shrink: 0;
@@ -101,16 +97,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   box-shadow: rgb(0 0 0 / 2%) -1px 0px 0px 0px inset;
 }
 
-.twilight-app-container .el-menu {
-  border-right: none;
-}
-
-.twilight-app-container .el-main {
-  padding: 0;
-  /* cursor: text; */
-}
-
-.twilight-app-container .app-toolbar {
+.twilight-app-container .file-toolbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -118,8 +105,15 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   right: 20px;
 }
 
+.twilight-app-container .el-main {
+  padding: 0;
+  /* cursor: text; */
+}
+
+
 .left-sidebar-container {
   display: flex;
-
 }
+
+
 </style>
