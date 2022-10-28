@@ -1,7 +1,8 @@
 <script setup>
 import LeftOptionBar from "../components/home/left-sidebar/LeftOptionBar.vue";
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
-import Tags from "../components/home/left-sidebar/Tags.vue"
+import Tags from "../components/home/left-sidebar/Tags.vue";
+import changeWidth from "../utils/change-width.js";
 
 const item = {
   date: "2016-05-02",
@@ -9,7 +10,6 @@ const item = {
   address: "No. 189, Grove St, Los Angeles",
 };
 const tableData = ref(Array.from({ length: 20 }).fill(item));
-
 </script>
 
 <template>
@@ -17,22 +17,26 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
     <!-- 页面 -->
     <el-container class="home-container">
       <!-- 左侧侧边栏 -->
-      <el-aside class="home-container__left">
+      <el-aside class="home-container__left" id="home-container__left">
         <!-- 最左侧选项栏 -->
         <LeftOptionBar />
         <!-- 左侧容器 -->
-        <el-scrollbar>
+        <el-scrollbar class="left__container">
           <div class="left__top-container">
             <!-- 文件目录 -->
             <FileDirectories />
           </div>
           <div class="left__bottom-container">
             <!-- 标签 -->
-            <Tags/>
+            <Tags />
           </div>
         </el-scrollbar>
       </el-aside>
-      <div class="change-width"></div>
+      <!-- 宽度可拖拽 -->
+      <div
+        class="left__dragged-box"
+        @mousedown="changeWidth($event, 'home-container__left')"
+      ></div>
       <!-- 中间主体 -->
       <el-container class="home-container__main">
         <!-- 头部工具栏 -->
@@ -86,7 +90,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   position: relative;
   display: flex;
   flex: 1 1 0%;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
 }
 
 .home-container .el-aside {
@@ -94,9 +98,29 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   flex-shrink: 0;
   position: relative;
   z-index: 111;
-  background: var(--color-aside-bg);
+  background-color: var(--color-aside-bg);
   transition: box-shadow 300ms ease 0s;
   box-shadow: rgb(0 0 0 / 2%) -1px 0px 0px 0px inset;
+}
+
+.home-container__left {
+  display: flex;
+  min-width: 15%;
+}
+
+.left__container {
+  flex: 1;
+}
+
+
+.left__dragged-box {
+  cursor: col-resize;
+  width: 5px;
+  border-left: 1px solid var(--color-split-line);
+}
+
+.left__dragged-box:hover {
+  background-color: var(--color-split-line-hover);
 }
 
 .home-container .main__file-toolbar {
@@ -106,16 +130,4 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   height: 100%;
   right: 20px;
 }
-
-.home-container .el-main {
-  padding: 0;
-  /* cursor: text; */
-}
-
-
-.home-container__left {
-  display: flex;
-}
-
-
 </style>
