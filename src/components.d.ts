@@ -24,7 +24,7 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
-    FileDirectories: typeof import('./components/Home/LeftSidebar/FileDirectories.vue')['default']
+    FileDirectories: typeof import('./components/home/left-sidebar/FileDirectories.vue')['default']
     IEpDiscount: typeof import('~icons/ep/discount')['default']
     IEpEditPen: typeof import('~icons/ep/edit-pen')['default']
     IEpHouse: typeof import('~icons/ep/house')['default']
@@ -34,7 +34,7 @@ declare module '@vue/runtime-core' {
     IEpMessage: typeof import('~icons/ep/message')['default']
     IEpSetting: typeof import('~icons/ep/setting')['default']
     IEpStar: typeof import('~icons/ep/star')['default']
-    LeftOptionBar: typeof import('./components/Home/LeftSidebar/LeftOptionBar.vue')['default']
-    Tags: typeof import('./components/Home/LeftSidebar/Tags.vue')['default']
+    LeftOptionBar: typeof import('./components/home/left-sidebar/LeftOptionBar.vue')['default']
+    Tags: typeof import('./components/home/left-sidebar/Tags.vue')['default']
   }
 }

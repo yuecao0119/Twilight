@@ -1,7 +1,7 @@
 <script setup>
-import LeftOptionBar from "../components/Home/LeftSidebar/LeftOptionBar.vue";
-import FileDirectories from "../components/Home/LeftSidebar/FileDirectories.vue";
-import Tags from "../components/Home/LeftSidebar/Tags.vue"
+import LeftOptionBar from "../components/home/left-sidebar/LeftOptionBar.vue";
+import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
+import Tags from "../components/home/left-sidebar/Tags.vue"
 
 const item = {
   date: "2016-05-02",
@@ -13,30 +13,31 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
 </script>
 
 <template>
-  <div class="twilight-app-layout">
+  <div class="home">
     <!-- 页面 -->
-    <el-container class="twilight-app-container">
+    <el-container class="home-container">
       <!-- 左侧侧边栏 -->
-      <el-aside class="left-sidebar-container">
+      <el-aside class="home-container__left">
         <!-- 最左侧选项栏 -->
         <LeftOptionBar />
         <!-- 左侧容器 -->
         <el-scrollbar>
-          <div class="left-top-container">
+          <div class="left__top-container">
             <!-- 文件目录 -->
             <FileDirectories />
           </div>
-          <div class="left-bottom-container">
+          <div class="left__bottom-container">
             <!-- 标签 -->
             <Tags/>
           </div>
         </el-scrollbar>
       </el-aside>
+      <div class="change-width"></div>
       <!-- 中间主体 -->
-      <el-container>
+      <el-container class="home-container__main">
         <!-- 头部工具栏 -->
         <el-header>
-          <div class="file-toolbar">
+          <div class="main__file-toolbar">
             <el-dropdown>
               <el-icon style="margin-right: 8px; margin-top: 1px"
                 ><IEpSetting
@@ -63,8 +64,9 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
           </el-scrollbar>
         </el-main>
       </el-container>
+
       <!-- 右侧侧边栏 -->
-      <el-aside>
+      <el-aside class="home__right">
         <!-- 右侧容器 -->
 
         <!-- 最右侧选项栏 -->
@@ -74,11 +76,11 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
 </template>
 
 <style lang="css">
-.twilight-app-layout {
+.home {
   height: 100%;
 }
 
-.twilight-app-container {
+.home-container {
   width: 100vw;
   height: 100%;
   position: relative;
@@ -87,7 +89,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   background: var(--color-bg);
 }
 
-.twilight-app-container .el-aside {
+.home-container .el-aside {
   flex-grow: 0;
   flex-shrink: 0;
   position: relative;
@@ -97,7 +99,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   box-shadow: rgb(0 0 0 / 2%) -1px 0px 0px 0px inset;
 }
 
-.twilight-app-container .file-toolbar {
+.home-container .main__file-toolbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -105,13 +107,13 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   right: 20px;
 }
 
-.twilight-app-container .el-main {
+.home-container .el-main {
   padding: 0;
   /* cursor: text; */
 }
 
 
-.left-sidebar-container {
+.home-container__left {
   display: flex;
 }
 
