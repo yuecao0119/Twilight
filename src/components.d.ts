@@ -7,7 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BasicOperations: typeof import('./components/home/left-sidebar/BasicOperations.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElCollapse: typeof import('element-plus/es')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/es')['ElCollapseItem']
     ElContainer: typeof import('element-plus/es')['ElContainer']
@@ -25,6 +28,7 @@ declare module '@vue/runtime-core' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     FileDirectories: typeof import('./components/home/left-sidebar/FileDirectories.vue')['default']
+    IEpDArrowLeft: typeof import('~icons/ep/d-arrow-left')['default']
     IEpDiscount: typeof import('~icons/ep/discount')['default']
     IEpEditPen: typeof import('~icons/ep/edit-pen')['default']
     IEpHouse: typeof import('~icons/ep/house')['default']
@@ -32,6 +36,7 @@ declare module '@vue/runtime-core' {
     IEpIconMenu: typeof import('~icons/ep/icon-menu')['default']
     IEpMenu: typeof import('~icons/ep/menu')['default']
     IEpMessage: typeof import('~icons/ep/message')['default']
+    IEpMoreFilled: typeof import('~icons/ep/more-filled')['default']
     IEpSetting: typeof import('~icons/ep/setting')['default']
     IEpStar: typeof import('~icons/ep/star')['default']
     LeftOptionBar: typeof import('./components/home/left-sidebar/LeftOptionBar.vue')['default']

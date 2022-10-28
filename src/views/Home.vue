@@ -1,7 +1,9 @@
 <script setup>
 import LeftOptionBar from "../components/home/left-sidebar/LeftOptionBar.vue";
+import BasicOperations from "../components/home/left-sidebar/BasicOperations.vue"
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
 import Tags from "../components/home/left-sidebar/Tags.vue";
+
 import changeWidth from "../utils/change-width.js";
 
 const item = {
@@ -19,16 +21,21 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
       <!-- 左侧侧边栏 -->
       <el-aside class="home-container__left" id="home-container__left">
         <!-- 最左侧选项栏 -->
-        <LeftOptionBar />
+        <LeftOptionBar/>
         <!-- 左侧容器 -->
         <el-scrollbar class="left__container">
+          <!-- 基础操作 -->
+          <div>
+            <BasicOperations/>
+          </div>
+
           <div class="left__top-container">
             <!-- 文件目录 -->
-            <FileDirectories />
+            <FileDirectories/>
           </div>
           <div class="left__bottom-container">
             <!-- 标签 -->
-            <Tags />
+            <Tags/>
           </div>
         </el-scrollbar>
       </el-aside>
@@ -97,7 +104,7 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   flex-grow: 0;
   flex-shrink: 0;
   position: relative;
-  z-index: 111;
+  z-index: 1;
   background-color: var(--color-aside-bg);
   transition: box-shadow 300ms ease 0s;
   box-shadow: rgb(0 0 0 / 2%) -1px 0px 0px 0px inset;
@@ -105,13 +112,13 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
 
 .home-container__left {
   display: flex;
+  width: 250px;
   min-width: 15%;
 }
 
 .left__container {
   flex: 1;
 }
-
 
 .left__dragged-box {
   cursor: col-resize;
