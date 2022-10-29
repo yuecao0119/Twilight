@@ -27,6 +27,10 @@
           <div class="content__button">
             <el-icon><IEpMoreFilled /></el-icon>
           </div>
+          <!-- 最小化 -->
+          <div class="content__button">
+            <el-icon><IEpMinus /></el-icon>
+          </div>
         </div>
       </div>
       <div class="file-content__menu twilight-menu__body">
@@ -62,7 +66,7 @@
           <div class="item__content item--file">
             <div class="content__left-container">
               <!-- 文件按钮 -->
-              <div class="file-symbol">·</div>
+              <div class="content__icon">·</div>
               <!-- 文件图标 -->
               <div class="content__button">
                 <el-icon><IEpDocument /></el-icon>
@@ -125,7 +129,7 @@
             <div class="content__right-container">
               <!-- 文件状态 -->
               <div class="content__button">
-                <el-icon><IEpStar /></el-icon>
+                M
               </div>
             </div>
           </div>
@@ -156,17 +160,7 @@
   justify-content: space-between;
 }
 
-.file-symbol {
-  flex-shrink: 0;
-  flex-grow: 0;
-  color: var(--color-button-text);
-  width: 20px;
-  height: 20px;
-  user-select: none;
-  transition: background 20ms ease-in 0s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.file-content__menu .content__icon {
   font-weight: 800;
 }
 </style>

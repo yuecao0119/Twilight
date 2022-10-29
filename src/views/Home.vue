@@ -3,18 +3,12 @@ import LeftOptionBar from "../components/home/left-sidebar/LeftOptionBar.vue";
 import BasicOperations from "../components/home/left-sidebar/BasicOperations.vue";
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
 import Tags from "../components/home/left-sidebar/Tags.vue";
+import NotePage from "./NotePage.vue";
 
 import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue";
 
 import changeWidth from "../utils/change-width.js";
 import { provide } from "vue";
-
-const item = {
-  date: "2016-05-02",
-  name: "Tom",
-  address: "No. 189, Grove St, Los Angeles",
-};
-const tableData = ref(Array.from({ length: 20 }).fill(item));
 
 // dialog显示管理
 const isPersonOperations = ref(false); // 是否显示用户操作框
@@ -60,34 +54,7 @@ provide("person-operations-visible", {
       ></div>
       <!-- 中间主体 -->
       <el-container class="home-container__main">
-        <!-- 头部工具栏 -->
-        <el-header>
-          <div class="main__file-toolbar">
-            <el-dropdown>
-              <el-icon style="margin-right: 8px; margin-top: 1px"
-                ><IEpSetting
-              /></el-icon>
-              <template #dropdown>
-                <el-dropdown-menu>
-                  <el-dropdown-item>View</el-dropdown-item>
-                  <el-dropdown-item>Add</el-dropdown-item>
-                  <el-dropdown-item>Delete</el-dropdown-item>
-                </el-dropdown-menu>
-              </template>
-            </el-dropdown>
-            <span>Tom</span>
-          </div>
-        </el-header>
-        <!-- 主体内容部分 -->
-        <el-main>
-          <el-scrollbar>
-            <el-table :data="tableData">
-              <el-table-column prop="date" label="Date" width="140" />
-              <el-table-column prop="name" label="Name" width="120" />
-              <el-table-column prop="address" label="Address" />
-            </el-table>
-          </el-scrollbar>
-        </el-main>
+        <NotePage />
       </el-container>
 
       <!-- 右侧侧边栏 -->
@@ -149,14 +116,6 @@ provide("person-operations-visible", {
 
 .left__dragged-box:hover {
   background-color: var(--color-split-line-hover);
-}
-
-.home-container .main__file-toolbar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  right: 20px;
 }
 
 /* 分割线 */
@@ -231,11 +190,12 @@ provide("person-operations-visible", {
   align-items: center;
 }
 
-.content__button {
+.content__button,
+.content__number {
   flex-shrink: 0;
   flex-grow: 0;
   color: var(--color-button-text);
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   user-select: none;
   transition: background 20ms ease-in 0s;
@@ -244,10 +204,30 @@ provide("person-operations-visible", {
   align-items: center;
   justify-content: center;
   border-radius: 3px;
+  padding: 0 2px;
 }
 
-.content__button:hover {
+.content__button:hover,
+.content__number:hover {
   background-color: var(--color-small-button-hover);
+}
+
+.content__number {
+  border: 1px solid var(--color-border);
+  color: var(--color-button-text-dark);
+}
+
+.content__icon {
+  flex-shrink: 0;
+  flex-grow: 0;
+  color: var(--color-button-text);
+  min-width: 20px;
+  height: 20px;
+  user-select: none;
+  transition: background 20ms ease-in 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content__left-container {
