@@ -35,7 +35,7 @@ const person = {
     </div>
     <!-- 操作菜单 -->
     <div class="person-card__body">
-      <div class="body__menu">
+      <div class="body__menu twilight-menu__body">
         <div class="menu__item">
           <div class="item__content">Create work account</div>
         </div>
@@ -82,14 +82,12 @@ const person = {
 }
 
 .header__email {
-  margin-top: 8px;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin: 8px 12px 2px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(55, 53, 47, 0.65);
-  font-size: 11px;
+  color: var(--color-text-dark);
+  font-size: 0.75rem;
   line-height: 16px;
   font-weight: 500;
 }
@@ -103,7 +101,6 @@ const person = {
   line-height: 120%;
   width: 100%;
   padding: 4px 14px;
-  font-size: 14px;
   height: 55px;
 }
 
@@ -118,8 +115,6 @@ const person = {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  width: 32px;
   border-radius: 0.25em;
   flex-shrink: 0;
 }
@@ -128,8 +123,8 @@ const person = {
   display: block;
   object-fit: cover;
   border-radius: 3px;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   transition: opacity 100ms ease-out 0s;
 }
 
@@ -140,18 +135,17 @@ const person = {
 }
 
 .text__name {
-  font-size: 14px;
-  line-height: 20px;
-  color: rgb(55, 53, 47);
+  font-size: 0.9rem;
+  color: var(--color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .text__motto {
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 16px;
-  color: rgba(55, 53, 47, 0.65);
+  color: var(--color-text-dark);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -162,21 +156,14 @@ const person = {
   background-color: var(--color-person-card-bg);
 }
 
-.body__menu {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;
-  margin-top: 1px;
-}
-
-.body__menu .menu__item .item__content {
-  font-size: 12px;
+.person-card__body .item__content {
+  margin: 0 12px;
 }
 
 .body__footer {
   padding-top: 6px;
   padding-bottom: 6px;
-  box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;
+  box-shadow: var(--color-box-shadow) 0px -1px 0px;
   margin-top: 1px;
 }
 

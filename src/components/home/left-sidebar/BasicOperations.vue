@@ -1,6 +1,5 @@
 <script setup>
-import { inject } from 'vue';
-
+import { inject } from "vue";
 
 const person = {
   name: "Virtual Moon",
@@ -10,11 +9,13 @@ const person = {
 };
 
 // 点击头像获取用户操作
-const { isPersonOperations, setIsPersonOperations } = inject('person-operations-visible');
+const { isPersonOperations, setIsPersonOperations } = inject(
+  "person-operations-visible"
+);
 const getPersonOperations = () => {
   console.log("Get person operations.");
   setIsPersonOperations(!isPersonOperations.value); // 更换显示状态
-  console.log(isPersonOperations)
+  console.log(isPersonOperations);
 };
 
 // 收缩左侧侧边栏
@@ -38,27 +39,33 @@ const collapseLeftSidebar = () => {
           <!-- 个人用户名 -->
           <div class="button__name">{{ person.name }}</div>
         </div>
-    </div>
+      </div>
       <!-- 收缩菜单栏 -->
       <div class="person__collapse-button" @click="collapseLeftSidebar">
         <el-icon><IEpDArrowLeft /></el-icon>
       </div>
+      <!-- 分割线 -->
+      <span class="split-line"></span>
       <!-- 基础操作 -->
       <div class="basic-operations__options">
-        <div class="options__menu">
-        <div class="menu__item">
-          <div class="item__content">
-            <el-icon><IEpSearch /></el-icon>
-            Search
+        <div class="twilight-menu__body">
+          <div class="menu__item">
+            <div class="item__content">
+              <el-icon><IEpSearch /></el-icon>
+              Search
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="item__content">
+              <el-icon><IEpClock /></el-icon>Updates
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="item__content">
+              <el-icon><IEpSetting /></el-icon>Settings
+            </div>
+          </div>
         </div>
-        </div>
-        <div class="menu__item">
-          <div class="item__content"><el-icon><IEpClock /></el-icon>Updates</div>
-        </div>
-        <div class="menu__item">
-          <div class="item__content"><el-icon><IEpSetting /></el-icon>Settings</div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
@@ -112,7 +119,7 @@ const collapseLeftSidebar = () => {
 }
 
 .button__name {
-  color: var(--color-text-icon);
+  color: var(--color-text);
   font-size: 0.95rem;
   font-weight: 500;
   margin: 0 0.5rem;
@@ -144,46 +151,15 @@ const collapseLeftSidebar = () => {
 }
 
 /* 基础操作 */
-.options__menu {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;
-  margin-top: 1px;
+.basic-operations__options .el-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  font-weight: bold;
 }
 
-.menu__item {
-  user-select: none;
-  transition: background 20ms ease-in 0s;
-  cursor: pointer;
-  margin-left: 4px;
-  margin-right: 4px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  line-height: 120%;
-  user-select: none;
-  min-height: 28px;
-  font-size: 14px;
-}
-
-.menu__item:hover {
-  background-color: var(--color-button-hover);
-}
-
-.item__content {
-  margin-left: 12px;
-  margin-right: 12px;
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  color: rgba(55, 53, 47, 0.65);
-  white-space: nowrap;
-}
-
-.item__content .el-icon {
-    margin-right: 8px;
-    font-weight: bold;
+.basic-operations__options .item__content {
+    margin: 0 12px;
 }
 
 </style>

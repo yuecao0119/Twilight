@@ -56,7 +56,7 @@
 
 .left-option-bar .el-menu-item {
   /* 默认图标颜色 */
-  color: var(--color-icon-option-bar);
+  color: var(--color-option-bar-icon);
 }
 
 .left-option-bar .el-menu-item:hover {
@@ -65,7 +65,7 @@
 
 .left-option-bar .el-menu-item.is-active {
   background-color: var(--color-icon-bg-option-bar-active);
-  color: var(--color-icon-option-bar-active);
+  color: var(--color-option-bar-icon-active);
 
 }
 
