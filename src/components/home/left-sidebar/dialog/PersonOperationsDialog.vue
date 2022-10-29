@@ -1,12 +1,10 @@
 <script setup>
-
 const person = {
   name: "Virtual Moon",
   img: "/src/assets/img/person-img.jpg",
   email: "crescent2020@163.com",
   motto: "枕上诗书闲处好，门前风景雨来佳。",
 };
-
 </script>
 
 <template>
@@ -23,7 +21,6 @@ const person = {
         <div class="person-info__img">
           <img :src="person.img" referrerpolicy="same-origin" />
         </div>
-
         <div class="person-info__text">
           <!-- 用户名 -->
           <div class="text__name">
@@ -71,7 +68,7 @@ const person = {
 }
 
 .person-card .el-card__body {
-    padding: 0;
+  padding: 0;
 }
 
 /* 个人操作弹窗header部分 */
@@ -107,7 +104,11 @@ const person = {
   width: 100%;
   padding: 4px 14px;
   font-size: 14px;
-  height: 48px;
+  height: 55px;
+}
+
+.header__person-info:hover {
+  background-color: var(--color-button-hover);
 }
 
 .person-info__img {
@@ -158,7 +159,7 @@ const person = {
 
 /* 个人操作弹窗body部分 */
 .person-card__body {
-    background-color: var(--color-person-card-bg);
+  background-color: var(--color-person-card-bg);
 }
 
 .body__menu {
@@ -168,31 +169,7 @@ const person = {
   margin-top: 1px;
 }
 
-.menu__item {
-  user-select: none;
-  transition: background 20ms ease-in 0s;
-  cursor: pointer;
-  margin-left: 4px;
-  margin-right: 4px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  line-height: 120%;
-  width: 100%;
-  user-select: none;
-  min-height: 28px;
-  font-size: 14px;
-}
-
-.item__content {
-  margin-left: 12px;
-  margin-right: 12px;
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  color: rgba(55, 53, 47, 0.65);
-  white-space: nowrap;
+.body__menu .menu__item .item__content {
   font-size: 12px;
 }
 

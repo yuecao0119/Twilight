@@ -27,7 +27,7 @@ const collapseLeftSidebar = () => {
   <div class="basic-operations">
     <!-- 个人信息 -->
     <div class="basic-operations__person">
-      <a class="person__button" @click="getPersonOperations">
+      <div class="person__button" @click="getPersonOperations">
         <div class="person__button-body">
           <!-- 个人图片 -->
           <img
@@ -38,13 +38,28 @@ const collapseLeftSidebar = () => {
           <!-- 个人用户名 -->
           <div class="button__name">{{ person.name }}</div>
         </div>
-    </a>
+    </div>
       <!-- 收缩菜单栏 -->
       <div class="person__collapse-button" @click="collapseLeftSidebar">
         <el-icon><IEpDArrowLeft /></el-icon>
       </div>
       <!-- 基础操作 -->
-      <div class="basic-operations__options"></div>
+      <div class="basic-operations__options">
+        <div class="options__menu">
+        <div class="menu__item">
+          <div class="item__content">
+            <el-icon><IEpSearch /></el-icon>
+            Search
+        </div>
+        </div>
+        <div class="menu__item">
+          <div class="item__content"><el-icon><IEpClock /></el-icon>Updates</div>
+        </div>
+        <div class="menu__item">
+          <div class="item__content"><el-icon><IEpSetting /></el-icon>Settings</div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +85,7 @@ const collapseLeftSidebar = () => {
   overflow: hidden;
   margin-right: 8px;
   padding-left: 15px;
+  cursor: pointer;
 }
 
 .el-button > span {
@@ -106,6 +122,7 @@ const collapseLeftSidebar = () => {
 }
 
 .person__collapse-button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,4 +142,48 @@ const collapseLeftSidebar = () => {
 .basic-operations__person .person__collapse-button:hover {
   background-color: var(--color-collapse-button-hover);
 }
+
+/* 基础操作 */
+.options__menu {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;
+  margin-top: 1px;
+}
+
+.menu__item {
+  user-select: none;
+  transition: background 20ms ease-in 0s;
+  cursor: pointer;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  line-height: 120%;
+  user-select: none;
+  min-height: 28px;
+  font-size: 14px;
+}
+
+.menu__item:hover {
+  background-color: var(--color-button-hover);
+}
+
+.item__content {
+  margin-left: 12px;
+  margin-right: 12px;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  color: rgba(55, 53, 47, 0.65);
+  white-space: nowrap;
+}
+
+.item__content .el-icon {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
 </style>
