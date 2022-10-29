@@ -4,7 +4,11 @@ import BasicOperations from "../components/home/left-sidebar/BasicOperations.vue
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
 import Tags from "../components/home/left-sidebar/Tags.vue";
 
+import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue"
+
+
 import changeWidth from "../utils/change-width.js";
+import { provide } from "vue";
 
 const item = {
   date: "2016-05-02",
@@ -12,6 +16,20 @@ const item = {
   address: "No. 189, Grove St, Los Angeles",
 };
 const tableData = ref(Array.from({ length: 20 }).fill(item));
+
+
+// dialog显示管理
+const isPersonOperations = ref(false); // 是否显示用户操作框
+const setIsPersonOperations = (value) => {
+  isPersonOperations.value = value
+}
+
+provide('person-operations-visible', {
+  isPersonOperations,
+  setIsPersonOperations
+})
+
+
 </script>
 
 <template>
@@ -83,6 +101,10 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
         <!-- 最右侧选项栏 -->
       </el-aside>
     </el-container>
+
+    <!-- 小窗口 -->
+    <!-- 个人操作弹窗 -->
+    <PersonOperationsDialog v-if="isPersonOperations" class="person-operations-dialog"/>
   </div>
 </template>
 
@@ -137,4 +159,17 @@ const tableData = ref(Array.from({ length: 20 }).fill(item));
   height: 100%;
   right: 20px;
 }
+
+
+
+
+/* 弹窗 */
+/* 个人操作弹窗 */
+.person-operations-dialog {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  z-index: 111;
+}
+
 </style>

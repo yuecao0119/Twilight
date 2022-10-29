@@ -40,6 +40,8 @@ declare module '@vue/runtime-core' {
     IEpSetting: typeof import('~icons/ep/setting')['default']
     IEpStar: typeof import('~icons/ep/star')['default']
     LeftOptionBar: typeof import('./components/home/left-sidebar/LeftOptionBar.vue')['default']
+    PersonCard: typeof import('./components/home/left-sidebar/dialog/PersonCard.vue')['default']
+    PersonOperationsDialog: typeof import('./components/home/left-sidebar/dialog/PersonOperationsDialog.vue')['default']
     Tags: typeof import('./components/home/left-sidebar/Tags.vue')['default']
   }
 }
