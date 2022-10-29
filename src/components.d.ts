@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BasicOperations: typeof import('./components/home/left-sidebar/BasicOperations.vue')['default']
+    ContentTree: typeof import('./components/home/right-sidebar/ContentTree.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
@@ -16,12 +17,16 @@ declare module '@vue/runtime-core' {
     ElCollapse: typeof import('element-plus/es')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/es')['ElCollapseItem']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElFooter: typeof import('element-plus/es')['ElFooter']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
@@ -63,6 +68,7 @@ declare module '@vue/runtime-core' {
     LeftOptionBar: typeof import('./components/home/left-sidebar/LeftOptionBar.vue')['default']
     PersonCard: typeof import('./components/home/left-sidebar/dialog/PersonCard.vue')['default']
     PersonOperationsDialog: typeof import('./components/home/left-sidebar/dialog/PersonOperationsDialog.vue')['default']
+    RightOptionBar: typeof import('./components/home/right-sidebar/RightOptionBar.vue')['default']
     Tags: typeof import('./components/home/left-sidebar/Tags.vue')['default']
   }
 }

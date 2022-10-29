@@ -4,10 +4,12 @@ import BasicOperations from "../components/home/left-sidebar/BasicOperations.vue
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
 import Tags from "../components/home/left-sidebar/Tags.vue";
 import NotePage from "./NotePage.vue";
+import ContentTree from "../components/home/right-sidebar/ContentTree.vue";
+import RightOptionBar from "../components/home/right-sidebar/RightOptionBar.vue";
 
 import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue";
 
-import changeWidth from "../utils/change-width.js";
+import { changeLeftDivWidth, changeRightDivWidth } from "../utils/change-width.js";
 import { provide } from "vue";
 
 // dialog显示管理
@@ -47,21 +49,36 @@ provide("person-operations-visible", {
           </div>
         </el-scrollbar>
       </el-aside>
-      <!-- 宽度可拖拽 -->
+      <!-- 左侧宽度可拖拽 -->
       <div
         class="left__dragged-box"
-        @mousedown="changeWidth($event, 'home-container__left')"
+        @mousedown="changeLeftDivWidth($event, 'home-container__left')"
       ></div>
       <!-- 中间主体 -->
       <el-container class="home-container__main">
         <NotePage />
       </el-container>
-
+      <!-- 右侧宽度可拖拽 -->
+      <div
+        class="right__dragged-box"
+        @mousedown="changeRightDivWidth($event, 'home-container__right')"
+      ></div>
       <!-- 右侧侧边栏 -->
-      <el-aside class="home__right">
+      <el-aside class="home-container__right" id="home-container__right">
         <!-- 右侧容器 -->
-
+        <el-scrollbar class="right__container">
+          <div class="right__top-container">
+            <!-- 目录树 -->
+            <div>
+              <ContentTree />
+            </div>
+          </div>
+          <div class="right__bottom-container">
+            <!-- TODO -->
+          </div>
+        </el-scrollbar>
         <!-- 最右侧选项栏 -->
+        <RightOptionBar />
       </el-aside>
     </el-container>
 
@@ -245,6 +262,27 @@ provide("person-operations-visible", {
 
 .content__right-container {
   display: flex;
+}
+
+/* 右侧边栏 */
+.home-container__right {
+  display: flex;
+  width: 250px;
+  min-width: 15%;
+}
+
+.right__container {
+  flex: 1;
+}
+
+.right__dragged-box {
+  cursor: col-resize;
+  width: 5px;
+  border-left: 1px solid var(--color-split-line);
+}
+
+.right__dragged-box:hover {
+  background-color: var(--color-split-line-hover);
 }
 
 /* 弹窗 */
