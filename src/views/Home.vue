@@ -9,7 +9,10 @@ import RightOptionBar from "../components/home/right-sidebar/RightOptionBar.vue"
 
 import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue";
 
-import { changeLeftDivWidth, changeRightDivWidth } from "../utils/change-width.js";
+import {
+  changeLeftDivWidth,
+  changeRightDivWidth,
+} from "../utils/change-width.js";
 import { provide } from "vue";
 
 // dialog显示管理
@@ -163,6 +166,20 @@ provide("person-operations-visible", {
   align-items: center;
 }
 
+.header__left-container .menu-header__icon {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-button-inactive);
+}
+
+.header__left-container .menu-header__icon:hover {
+  background-color: var(--color-button-active);
+}
+
+.header__left-container .menu-header__icon .el-icon {
+  font-size: 1.1rem;
+}
+
 .header__right-container {
   display: flex;
 }
@@ -188,7 +205,6 @@ provide("person-operations-visible", {
   border-radius: 3px;
   display: flex;
   align-items: center;
-  min-height: 28px;
   font-size: 14px;
 }
 
@@ -205,6 +221,8 @@ provide("person-operations-visible", {
   color: var(--color-button-text);
   white-space: nowrap;
   align-items: center;
+  padding: 4px 2px;
+  justify-content: space-between;
 }
 
 .content__button,
@@ -245,6 +263,12 @@ provide("person-operations-visible", {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.item__content .el-icon {
+  font-size: 0.95rem;
 }
 
 .content__left-container {
@@ -256,8 +280,12 @@ provide("person-operations-visible", {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 20px;
-  margin-left: 2px;
+  line-height: 20px;
+  color: var(--color-button-text);
+  user-select: none;
+  padding: 0 2px;
+  transition: background 20ms ease-in 0s;
+  border-radius: 3px;
 }
 
 .content__right-container {
@@ -278,7 +306,7 @@ provide("person-operations-visible", {
 .right__dragged-box {
   cursor: col-resize;
   width: 5px;
-  border-left: 1px solid var(--color-split-line);
+  border-right: 1px solid var(--color-split-line);
 }
 
 .right__dragged-box:hover {

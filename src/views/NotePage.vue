@@ -10,24 +10,49 @@
         <div class="note-toolbar__left">
           <!-- 面包屑 -->
           <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }"
-              >homepage</el-breadcrumb-item
-            >
-            <el-breadcrumb-item
-              ><a href="/">promotion management</a></el-breadcrumb-item
+            <el-breadcrumb-item :to="{ path: '/' }">
+              <div class="menu__item item__content">
+                <div class="content__icon">
+                  <el-icon><IEpFolder /></el-icon>
+                </div>
+                <!-- 文件名 -->
+                <div class="content__text">文件夹测试</div>
+              </div>
+            </el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/' }">
+              <div class="menu__item item__content">
+                <div class="content__icon">
+                  <el-icon><IEpFolder /></el-icon>
+                </div>
+                <!-- 文件名 -->
+                <div class="content__text">文件夹测试</div>
+              </div>
+            </el-breadcrumb-item>
+            <el-breadcrumb-item>
+              <div class="menu__item item__content">
+                <div class="content__icon">
+                  <el-icon><IEpDocument /></el-icon>
+                </div>
+                <!-- 文件名 -->
+                <div class="content__text">文件测试</div>
+              </div></el-breadcrumb-item
             >
           </el-breadcrumb>
         </div>
         <div class="note-toolbar__right">
           <!-- 收藏按钮 -->
           <div class="right__star-button content__button">
-            <el-icon><IEpStar /></el-icon>
+            <el-tooltip effect="dark" content="收藏" placement="bottom">
+              <el-icon><IEpStar /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 分享按钮 -->
           <div class="right__share-button content__button">分享</div>
           <!-- 更多操作 -->
           <el-dropdown class="content__button">
-            <el-icon><IEpMoreFilled /></el-icon>
+            <el-tooltip effect="dark" content="更多" placement="bottom">
+              <el-icon><IEpMoreFilled /></el-icon>
+            </el-tooltip>
             <template #dropdown>
               <el-dropdown-menu> twilight-menu </el-dropdown-menu>
             </template>
@@ -46,17 +71,31 @@
       <div class="footer__note-toolbar">
         <div class="note-toolbar__left">
           <!-- 源代码模式 -->
-          <div class="left__source-code-button content__button">源代码</div>
+          <div class="left__source-code-button content__button">
+            <el-tooltip effect="dark" content="启用源代码模式" placement="top">
+              <el-icon><IEpSwitch /></el-icon>
+            </el-tooltip>
+          </div>
         </div>
         <div class="note-toolbar__right">
           <!-- 选择编码格式 -->
-          <div class="right__code-format content__button">UTF-8</div>
+          <div class="right__code-format content__button">
+            <el-tooltip effect="dark" content="编码格式" placement="top">
+              UTF-8
+            </el-tooltip>
+          </div>
           <!-- 语言拼写检查 -->
-          <div class="right__check-spell content__button">中文</div>
+          <div class="right__check-spell content__button">
+            <el-tooltip effect="dark" content="拼写检查" placement="top">
+              中文
+            </el-tooltip>
+          </div>
           <!-- 统计数据 -->
           <div class="right__statistic-data content__button">
-            <div>1024 词</div>
-            <el-icon><IEpDCaret /></el-icon>
+            <el-tooltip effect="dark" content="字数统计" placement="top">
+              <div>1024 词</div>
+              <el-icon><IEpDCaret /></el-icon>
+            </el-tooltip>
           </div>
         </div>
       </div>
@@ -106,19 +145,29 @@
   overflow: hidden;
 }
 
-.header__note-toolbar .content__button {
-    padding: 3px;
-    min-height: 2rem;
-    min-width: 2rem;
-    font-size: 1rem;
+.el-breadcrumb__separator {
+  margin: 0;
 }
 
+.header__note-toolbar .content__button {
+  padding: 3px;
+  min-height: 2rem;
+  min-width: 2rem;
+  font-size: 1rem;
+}
 
-
-
+.header__note-toolbar .note-toolbar__right .content__button {
+  margin-left: 5px;
+}
 
 .note-toolbar__right {
   display: flex;
+}
+
+.header__note-toolbar .right__share-button {
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+  min-width: 3.4rem;
 }
 
 .note-page__main {
@@ -128,7 +177,7 @@
 
 .note-page__footer {
   height: 25px;
-  padding: 0px 8px 5px 8px;
+  padding: 0px 8px 0px 8px;
 }
 
 .footer__note-toolbar {
@@ -139,8 +188,11 @@
 }
 
 .footer__note-toolbar .content__button {
-    padding: 5px;
-    font-size: .8rem;
+  padding: 6px;
+  font-size: 0.8rem;
+  min-width: 25px;
+  height: 25px;
+  border-radius: 0;
 }
 
 .right__statistic-data {

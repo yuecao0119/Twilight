@@ -159,7 +159,7 @@ const collapseLeftSidebar = () => {
 }
 
 .basic-operations__options .item__content {
-    margin: 0 12px;
+  margin: 0 12px;
+  justify-content: flex-start;
 }
-
 </style>

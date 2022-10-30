@@ -8,8 +8,8 @@
       <div class="twilight-menu__header">
         <div class="header__left-container">
           <!-- 根目录图标 -->
-          <div class="content__button root-folder-icon">
-            <el-icon><IEpFolder /></el-icon>
+          <div class="content__button menu-header__icon">
+            <el-icon><IEpNotebook /></el-icon>
           </div>
           <!-- 文件名 -->
           <div class="content__text">根目录</div>
@@ -17,19 +17,27 @@
         <div class="header__right-container">
           <!-- 定位打开的文件 -->
           <div class="content__button">
-            <el-icon><IEpAim /></el-icon>
+            <el-tooltip effect="dark" content="定位当前文件" placement="bottom">
+              <el-icon><IEpAim /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 折叠按钮（只保留一级文件） -->
           <div class="content__button">
-            <el-icon><IEpArrowUp /></el-icon>
+            <el-tooltip effect="dark" content="折叠" placement="bottom">
+              <el-icon><IEpArrowUp /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 更多按钮 -->
           <div class="content__button">
-            <el-icon><IEpMoreFilled /></el-icon>
+            <el-tooltip effect="dark" content="更多" placement="bottom">
+              <el-icon><IEpMoreFilled /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 最小化 -->
           <div class="content__button">
-            <el-icon><IEpMinus /></el-icon>
+            <el-tooltip effect="dark" content="最小化" placement="bottom">
+              <el-icon><IEpMinus /></el-icon>
+            </el-tooltip>
           </div>
         </div>
       </div>
@@ -40,11 +48,15 @@
             <div class="content__left-container">
               <!-- 文件夹收缩按钮 -->
               <div class="content__button">
-                <el-icon><IEpArrowRight /></el-icon>
+                <el-tooltip effect="dark" content="折叠" placement="bottom">
+                  <el-icon><IEpArrowRight /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 文件图标 -->
               <div class="content__button">
-                <el-icon><IEpFolder /></el-icon>
+                <el-tooltip effect="dark" content="修改图标" placement="bottom">
+                  <el-icon><IEpFolder /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 文件名 -->
               <div class="content__text">文件夹测试 {{ i }}</div>
@@ -52,11 +64,15 @@
             <div class="content__right-container">
               <!-- 文件操作 -->
               <div class="content__button">
-                <el-icon><IEpMoreFilled /></el-icon>
+                <el-tooltip effect="dark" content="更多" placement="bottom">
+                  <el-icon><IEpMoreFilled /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 新建文件 -->
               <div class="content__button">
-                <el-icon><IEpPlus /></el-icon>
+                <el-tooltip effect="dark" content="新建文件" placement="bottom">
+                  <el-icon><IEpPlus /></el-icon>
+                </el-tooltip>
               </div>
             </div>
           </div>
@@ -66,10 +82,12 @@
           <div class="item__content item--file">
             <div class="content__left-container">
               <!-- 文件按钮 -->
-              <div class="content__icon">·</div>
+              <div class="content__icon">•</div>
               <!-- 文件图标 -->
               <div class="content__button">
-                <el-icon><IEpDocument /></el-icon>
+                <el-tooltip effect="dark" content="修改图标" placement="bottom">
+                  <el-icon><IEpDocument /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 文件名 -->
               <div class="content__text">文件测试 {{ i }}</div>
@@ -77,11 +95,15 @@
             <div class="content__right-container">
               <!-- 文件操作 -->
               <div class="content__button">
-                <el-icon><IEpMoreFilled /></el-icon>
+                <el-tooltip effect="dark" content="更多" placement="bottom">
+                  <el-icon><IEpMoreFilled /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 收藏文件 -->
               <div class="content__button">
-                <el-icon><IEpStar /></el-icon>
+                <el-tooltip effect="dark" content="收藏" placement="bottom">
+                  <el-icon><IEpStar /></el-icon>
+                </el-tooltip>
               </div>
             </div>
           </div>
@@ -94,7 +116,9 @@
         <div class="header__left-container">
           <!-- 收缩按钮 -->
           <div class="content__button">
-            <el-icon><IEpArrowRight /></el-icon>
+            <el-tooltip effect="dark" content="收缩" placement="bottom">
+              <el-icon><IEpArrowRight /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 文件名 -->
           <div class="content__text">已打开的文件</div>
@@ -102,11 +126,15 @@
         <div class="header__right-container">
           <!-- 保存所有文件 -->
           <div class="content__button">
-            <el-icon><IEpMessageBox /></el-icon>
+            <el-tooltip effect="dark" content="保存所有文件" placement="bottom">
+              <el-icon><IEpMessageBox /></el-icon>
+            </el-tooltip>
           </div>
           <!-- 关闭所有文件 -->
           <div class="content__button">
-            <el-icon><IEpCircleClose /></el-icon>
+            <el-tooltip effect="dark" content="关闭所有文件" placement="bottom">
+              <el-icon><IEpCircleClose /></el-icon>
+            </el-tooltip>
           </div>
         </div>
       </div>
@@ -117,19 +145,34 @@
             <div class="content__left-container">
               <!-- 关闭文件 -->
               <div class="content__button">
-                <el-icon><IEpClose /></el-icon>
+                <el-tooltip
+                  effect="dark"
+                  content="关闭当前文件"
+                  placement="bottom"
+                >
+                  <el-icon><IEpClose /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 文件图标 -->
               <div class="content__button">
-                <el-icon><IEpDocument /></el-icon>
+                <el-tooltip effect="dark" content="修改图标" placement="bottom">
+                  <el-icon><IEpDocument /></el-icon>
+                </el-tooltip>
               </div>
               <!-- 文件名 -->
               <div class="content__text">文件测试 {{ i }}</div>
             </div>
             <div class="content__right-container">
               <!-- 文件状态 -->
+
               <div class="content__button">
-                M
+                <el-tooltip
+                  effect="dark"
+                  content="文件状态 • 未保存"
+                  placement="bottom"
+                >
+                  M
+                </el-tooltip>
               </div>
             </div>
           </div>
@@ -141,15 +184,6 @@
 
 <style lang="css">
 /* 文件目录 */
-.header__left-container .root-folder-icon {
-  width: 25px;
-  height: 25px;
-}
-
-.header__left-container .root-folder-icon .el-icon {
-  font-size: 1rem;
-}
-
 /* 文件夹 */
 .item--folder {
   justify-content: space-between;
@@ -158,9 +192,5 @@
 /* 文件 */
 .item--file {
   justify-content: space-between;
-}
-
-.file-content__menu .content__icon {
-  font-weight: 800;
 }
 </style>
