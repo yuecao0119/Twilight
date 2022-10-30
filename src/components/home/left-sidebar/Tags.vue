@@ -9,7 +9,7 @@
         <div class="header__left-container">
           <!-- 标签icon -->
           <div class="content__icon menu-header__icon">
-            <el-icon><IEpDiscount /></el-icon>
+            <el-icon><IEpPriceTag /></el-icon>
           </div>
           <!-- 文件名 -->
           <div class="content__text">标签</div>

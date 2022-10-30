@@ -1,13 +1,13 @@
 <script setup>
-import LeftOptionBar from "../components/home/left-sidebar/LeftOptionBar.vue";
+import LeftOptionsBar from "../components/home/left-sidebar/LeftOptionsBar.vue";
 import BasicOperations from "../components/home/left-sidebar/BasicOperations.vue";
 import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue";
 import Tags from "../components/home/left-sidebar/Tags.vue";
 import NotePage from "./NotePage.vue";
 import ContentTree from "../components/home/right-sidebar/ContentTree.vue";
 import BackLinks from "../components/home/right-sidebar/Backlinks.vue"
-import RightOptionBar from "../components/home/right-sidebar/RightOptionBar.vue";
-
+import RightOptionsBar from "../components/home/right-sidebar/RightOptionsBar.vue";
+import RightMoreOptionsBar from "../components/home/right-sidebar/RightMoreOptionsBar.vue";
 
 import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue";
 
@@ -36,7 +36,7 @@ provide("person-operations-visible", {
       <!-- 左侧侧边栏 -->
       <el-aside class="home-container__left" id="home-container__left">
         <!-- 最左侧选项栏 -->
-        <LeftOptionBar />
+        <LeftOptionsBar />
         <!-- 左侧容器 -->
         <el-scrollbar class="left__container">
           <!-- 基础操作 -->
@@ -80,9 +80,12 @@ provide("person-operations-visible", {
             <!-- 反向链接 -->
             <BackLinks />
           </div>
+
+          <!-- 更多工具 -->
+          <RightMoreOptionsBar />
         </el-scrollbar>
         <!-- 最右侧选项栏 -->
-        <RightOptionBar />
+        <RightOptionsBar />
       </el-aside>
     </el-container>
 
@@ -175,6 +178,7 @@ provide("person-operations-visible", {
 
 .header__left-container .menu-header__icon:hover {
   background-color: var(--color-button-active);
+  color: var(--color-button-icon-hover);
 }
 
 .header__left-container .menu-header__icon .el-icon {
@@ -322,4 +326,13 @@ provide("person-operations-visible", {
   left: 50px;
   z-index: 111;
 }
+
+
+
+
+/* 盒子状态 */
+.hidden {
+  display: none;
+}
+
 </style>

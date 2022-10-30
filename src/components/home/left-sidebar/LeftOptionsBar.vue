@@ -12,6 +12,10 @@
         <el-icon><IEpEditPen /></el-icon>
         <template #title>文献 Alt + 2<br/> 单击 展开/收缩</template>
       </el-menu-item>
+      <el-menu-item index="3">
+        <el-icon><IEpRefrigerator /></el-icon>
+        <template #title>私密文件 Alt + 0<br/> 单击 展开/收缩</template>
+      </el-menu-item>
     </el-menu>
     <!-- 下半部分选项 -->
     <el-menu class="left-option-bar__bottom-menu" :collapse="true">
@@ -24,7 +28,7 @@
         <template #title>收藏 Alt + 4<br/> 单击 展开/收缩</template>
       </el-menu-item>
       <el-menu-item index="3">
-        <el-icon><IEpDiscount /></el-icon>
+        <el-icon><IEpPriceTag /></el-icon>
         <template #title>标签 Alt + 5<br/> 单击 展开/收缩</template>
       </el-menu-item>
     </el-menu>
