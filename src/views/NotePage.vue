@@ -50,9 +50,11 @@
           <div class="right__share-button content__button">分享</div>
           <!-- 更多操作 -->
           <el-dropdown class="content__button">
-            <el-tooltip effect="dark" content="更多" placement="bottom">
-              <el-icon><IEpMoreFilled /></el-icon>
-            </el-tooltip>
+            <div>
+              <el-tooltip effect="dark" content="更多" placement="bottom">
+                <el-icon><IEpMoreFilled /></el-icon>
+              </el-tooltip>
+            </div>
             <template #dropdown>
               <el-dropdown-menu> twilight-menu </el-dropdown-menu>
             </template>
