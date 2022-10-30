@@ -5,7 +5,9 @@ import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue
 import Tags from "../components/home/left-sidebar/Tags.vue";
 import NotePage from "./NotePage.vue";
 import ContentTree from "../components/home/right-sidebar/ContentTree.vue";
+import BackLinks from "../components/home/right-sidebar/Backlinks.vue"
 import RightOptionBar from "../components/home/right-sidebar/RightOptionBar.vue";
+
 
 import PersonOperationsDialog from "../components/home/left-sidebar/dialog/PersonOperationsDialog.vue";
 
@@ -72,12 +74,11 @@ provide("person-operations-visible", {
         <el-scrollbar class="right__container">
           <div class="right__top-container">
             <!-- 目录树 -->
-            <div>
               <ContentTree />
-            </div>
           </div>
           <div class="right__bottom-container">
-            <!-- TODO -->
+            <!-- 反向链接 -->
+            <BackLinks />
           </div>
         </el-scrollbar>
         <!-- 最右侧选项栏 -->

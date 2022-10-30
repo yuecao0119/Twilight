@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Backlinks: typeof import('./components/home/right-sidebar/Backlinks.vue')['default']
+    BackLinks: typeof import('./components/home/right-sidebar/BackLinks.vue')['default']
     BasicOperations: typeof import('./components/home/left-sidebar/BasicOperations.vue')['default']
     ContentTree: typeof import('./components/home/right-sidebar/ContentTree.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
