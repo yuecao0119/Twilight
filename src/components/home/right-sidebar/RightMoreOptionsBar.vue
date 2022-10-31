@@ -5,7 +5,7 @@
 -->
 <script setup>
 // 快捷键drawer
-const hotkeysDrawerBl = ref(true);
+const hotkeysDrawerBl = ref(false);
 
 // 快捷键搜索框
 const hotkeysDrawerSearchInputStr = ref("");
@@ -336,6 +336,8 @@ button:focus-visible {
 
 .el-drawer__body {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .table__header {

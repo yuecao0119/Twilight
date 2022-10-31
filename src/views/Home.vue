@@ -125,7 +125,8 @@ provide("person-operations-visible", {
 .home-container__left {
   display: flex;
   width: 250px;
-  min-width: 15%;
+  min-width: 160px;
+  max-width: 480px;
 }
 
 .left__container {
@@ -301,7 +302,8 @@ provide("person-operations-visible", {
 .home-container__right {
   display: flex;
   width: 250px;
-  min-width: 15%;
+  min-width: 160px;
+  max-width: 480px;
 }
 
 .right__container {
