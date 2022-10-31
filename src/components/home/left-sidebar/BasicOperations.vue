@@ -9,13 +9,13 @@ const person = {
 };
 
 // 点击头像获取用户操作
-const { isPersonOperations, setIsPersonOperations } = inject(
+const { personOperationsBl, setpersonOperationsBl } = inject(
   "person-operations-visible"
 );
 const getPersonOperations = () => {
   console.log("Get person operations.");
-  setIsPersonOperations(!isPersonOperations.value); // 更换显示状态
-  console.log(isPersonOperations);
+  setpersonOperationsBl(!personOperationsBl.value); // 更换显示状态
+  console.log(personOperationsBl);
 };
 
 // 收缩左侧侧边栏

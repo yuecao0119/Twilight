@@ -117,6 +117,7 @@
 .note-page__header {
   height: 40px;
   padding: 6px 8px 4px 8px;
+  user-select: none;
 }
 
 .header__note-toolbar {
@@ -180,6 +181,7 @@
 .note-page__footer {
   height: 25px;
   padding: 0px 8px 0px 8px;
+  user-select: none;
 }
 
 .footer__note-toolbar {

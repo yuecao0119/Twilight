@@ -18,14 +18,14 @@ import {
 import { provide } from "vue";
 
 // dialog显示管理
-const isPersonOperations = ref(false); // 是否显示用户操作框
-const setIsPersonOperations = (value) => {
-  isPersonOperations.value = value;
+const personOperationsBl = ref(false); // 是否显示用户操作框
+const setpersonOperationsBl = (value) => {
+  personOperationsBl.value = value;
 };
 
 provide("person-operations-visible", {
-  isPersonOperations,
-  setIsPersonOperations,
+  personOperationsBl,
+  setpersonOperationsBl,
 });
 </script>
 
@@ -92,7 +92,7 @@ provide("person-operations-visible", {
     <!-- 小窗口 -->
     <!-- 个人操作弹窗 -->
     <PersonOperationsDialog
-      v-if="isPersonOperations"
+      v-if="personOperationsBl"
       class="person-operations-dialog"
     />
   </div>

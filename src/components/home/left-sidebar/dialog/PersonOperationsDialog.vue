@@ -86,7 +86,7 @@ const person = {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--color-text-dark);
+  color: var(--color-text-darker);
   font-size: 0.75rem;
   line-height: 16px;
   font-weight: 500;
@@ -145,7 +145,7 @@ const person = {
 .text__motto {
   font-size: 0.75rem;
   line-height: 16px;
-  color: var(--color-text-dark);
+  color: var(--color-text-darker);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
