@@ -43,6 +43,7 @@ declare module '@vue/runtime-core' {
     FileDirectories: typeof import('./components/home/left-sidebar/FileDirectories.vue')['default']
     IEpAim: typeof import('~icons/ep/aim')['default']
     IEpAlarmClock: typeof import('~icons/ep/alarm-clock')['default']
+    IEpArrowDown: typeof import('~icons/ep/arrow-down')['default']
     IEpArrowRight: typeof import('~icons/ep/arrow-right')['default']
     IEpArrowUp: typeof import('~icons/ep/arrow-up')['default']
     IEpCircleClose: typeof import('~icons/ep/circle-close')['default']
@@ -85,10 +86,13 @@ declare module '@vue/runtime-core' {
     IEpStar: typeof import('~icons/ep/star')['default']
     IEpSwitch: typeof import('~icons/ep/switch')['default']
     LeftOptionsBar: typeof import('./components/home/left-sidebar/LeftOptionsBar.vue')['default']
+    NoteToolBar: typeof import('./components/notepage/header/NoteToolBar.vue')['default']
     PersonCard: typeof import('./components/home/left-sidebar/dialog/PersonCard.vue')['default']
     PersonOperationsDialog: typeof import('./components/home/left-sidebar/dialog/PersonOperationsDialog.vue')['default']
     RightMoreOptionsBar: typeof import('./components/home/right-sidebar/RightMoreOptionsBar.vue')['default']
     RightOptionsBar: typeof import('./components/home/right-sidebar/RightOptionsBar.vue')['default']
+    TabBar: typeof import('./components/notepage/header/TabBar.vue')['default']
+    TabControl: typeof import('./components/notepage/header/TabControl.vue')['default']
     Tags: typeof import('./components/home/left-sidebar/Tags.vue')['default']
   }
 }

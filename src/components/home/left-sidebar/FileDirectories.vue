@@ -1,5 +1,6 @@
 <script setup></script>
-
+<!-- TODO 鼠标放到某个文件上，tooltip（白底、样式简化一下） 显示文件名 子文件数 创建时间
+show-after延迟出现 -->
 <template>
   <el-scrollbar>
     <!-- 文件目录 -->
@@ -164,11 +165,10 @@
             </div>
             <div class="content__right-container">
               <!-- 文件状态 -->
-
               <div class="content__button">
                 <el-tooltip
                   effect="dark"
-                  content="文件状态 • 未保存"
+                  content="文件状态 • 未保存 TODO:点击保存"
                   placement="bottom"
                 >
                   M

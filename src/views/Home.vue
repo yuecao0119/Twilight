@@ -298,6 +298,12 @@ provide("person-operations-visible", {
   display: flex;
 }
 
+/* 主体部分 */
+.home-container__main {
+  padding: 0;
+  margin: 0;
+}
+
 /* 右侧边栏 */
 .home-container__right {
   display: flex;
