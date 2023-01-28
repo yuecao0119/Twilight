@@ -4,7 +4,7 @@
   <!-- 反向链接 -->
   <el-scrollbar>
     <div class="back-links">
-      <div class="split-line"></div>
+      <!-- <div class="split-line"></div> -->
       <div class="twilight-menu__header">
         <div class="header__left-container">
           <!-- 反向链接icon -->

@@ -1,5 +1,7 @@
 <script setup>
-import { inject } from "vue";
+import { inject, ref } from "vue";
+import SearchDialog from "./dialog/SearchDialog.vue"
+
 
 const person = {
   name: "Virtual Moon",
@@ -45,12 +47,12 @@ const collapseLeftSidebar = () => {
         <el-icon><IEpDArrowLeft /></el-icon>
       </div>
       <!-- 分割线 -->
-      <span class="split-line"></span>
+      <!-- <span class="split-line"></span> -->
       <!-- 基础操作 -->
       <div class="basic-operations__options">
         <div class="twilight-menu__body">
           <div class="menu__item">
-            <div class="item__content">
+            <div class="item__content" @click="searchDialogBl = true">
               <el-icon><IEpSearch /></el-icon>
               Search
             </div>
@@ -67,6 +69,10 @@ const collapseLeftSidebar = () => {
           </div>
         </div>
       </div>
+      <!-- 基础操作的弹窗 -->
+      <!-- 搜索框弹窗 -->
+      <SearchDialog />
+
     </div>
   </div>
 </template>
@@ -162,4 +168,6 @@ const collapseLeftSidebar = () => {
   margin: 0 12px;
   justify-content: flex-start;
 }
+
+
 </style>

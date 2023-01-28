@@ -5,7 +5,7 @@ import FileDirectories from "../components/home/left-sidebar/FileDirectories.vue
 import Tags from "../components/home/left-sidebar/Tags.vue";
 import NotePage from "./NotePage.vue";
 import ContentTree from "../components/home/right-sidebar/ContentTree.vue";
-import BackLinks from "../components/home/right-sidebar/Backlinks.vue"
+import BackLinks from "../components/home/right-sidebar/Backlinks.vue";
 import RightOptionsBar from "../components/home/right-sidebar/RightOptionsBar.vue";
 import RightMoreOptionsBar from "../components/home/right-sidebar/RightMoreOptionsBar.vue";
 
@@ -56,7 +56,7 @@ provide("person-operations-visible", {
       </el-aside>
       <!-- 左侧宽度可拖拽 -->
       <div
-        class="left__dragged-box"
+        class="dragged-box"
         @mousedown="changeLeftDivWidth($event, 'home-container__left')"
       ></div>
       <!-- 中间主体 -->
@@ -65,7 +65,7 @@ provide("person-operations-visible", {
       </el-container>
       <!-- 右侧宽度可拖拽 -->
       <div
-        class="right__dragged-box"
+        class="dragged-box"
         @mousedown="changeRightDivWidth($event, 'home-container__right')"
       ></div>
       <!-- 右侧侧边栏 -->
@@ -74,7 +74,7 @@ provide("person-operations-visible", {
         <el-scrollbar class="right__container">
           <div class="right__top-container">
             <!-- 目录树 -->
-              <ContentTree />
+            <ContentTree />
           </div>
           <div class="right__bottom-container">
             <!-- 反向链接 -->
@@ -116,10 +116,7 @@ provide("person-operations-visible", {
   flex-grow: 0;
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
   background-color: var(--color-aside-bg);
-  transition: box-shadow 300ms ease 0s;
-  box-shadow: var(--color-box-shadow) -1px 0px 0px 0px inset;
 }
 
 .home-container__left {
@@ -133,15 +130,23 @@ provide("person-operations-visible", {
   flex: 1;
 }
 
-.left__dragged-box {
+.dragged-box {
   cursor: col-resize;
   width: 5px;
+  /*  */
+}
+
+.dragged-box:hover {
+  background-color: var(--color-split-line-hover);
+}
+
+/* .left__dragged-box {
   border-left: 1px solid var(--color-split-line);
 }
 
-.left__dragged-box:hover {
-  background-color: var(--color-split-line-hover);
-}
+.right__dragged-box {
+  border-right: 1px solid var(--color-split-line);
+} */
 
 /* 分割线 */
 .split-line {
@@ -174,12 +179,17 @@ provide("person-operations-visible", {
 .header__left-container .menu-header__icon {
   width: 25px;
   height: 25px;
-  background-color: var(--color-button-inactive);
+  background-color: var(--color-big-button);
 }
 
 .header__left-container .menu-header__icon:hover {
-  background-color: var(--color-button-active);
-  color: var(--color-button-icon-hover);
+  background-color: var(--color-big-button-hover);
+  color: var(--color-big-button-icon-hover);
+}
+
+.header__left-container .menu-header__icon:active {
+  background-color: var(--color-big-button-active);
+  color: var(--color-big-button-icon-active);
 }
 
 .header__left-container .menu-header__icon .el-icon {
@@ -212,10 +222,17 @@ provide("person-operations-visible", {
   display: flex;
   align-items: center;
   font-size: 14px;
+  height: 32px;
+  color: var(--color-button-text);
 }
 
 .menu__item:hover {
   background-color: var(--color-button-hover);
+}
+
+.menu__item:active {
+  background-color: var(--color-button-active);
+  color: var(--color-button-text-active);
 }
 
 .item__content {
@@ -224,7 +241,6 @@ provide("person-operations-visible", {
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
-  color: var(--color-button-text);
   white-space: nowrap;
   align-items: center;
   padding: 4px 2px;
@@ -235,7 +251,6 @@ provide("person-operations-visible", {
 .content__number {
   flex-shrink: 0;
   flex-grow: 0;
-  color: var(--color-button-text);
   min-width: 20px;
   height: 20px;
   user-select: none;
@@ -253,6 +268,11 @@ provide("person-operations-visible", {
   background-color: var(--color-small-button-hover);
 }
 
+.menu__item:active .content__button:hover,
+.menu__item:active .content__number:hover {
+  background-color: var(--color-small-button-active);
+}
+
 .content__number {
   border: 1px solid var(--color-border);
   color: var(--color-button-text-dark);
@@ -261,7 +281,6 @@ provide("person-operations-visible", {
 .content__icon {
   flex-shrink: 0;
   flex-grow: 0;
-  color: var(--color-button-text);
   min-width: 20px;
   height: 20px;
   user-select: none;
@@ -280,6 +299,7 @@ provide("person-operations-visible", {
 .content__left-container {
   display: flex;
   overflow: hidden;
+  align-items: center;
 }
 
 .content__text {
@@ -287,7 +307,6 @@ provide("person-operations-visible", {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 20px;
-  color: var(--color-button-text);
   user-select: none;
   padding: 0 2px;
   transition: background 20ms ease-in 0s;
@@ -296,6 +315,7 @@ provide("person-operations-visible", {
 
 .content__right-container {
   display: flex;
+  align-items: center;
 }
 
 /* 主体部分 */
@@ -316,16 +336,6 @@ provide("person-operations-visible", {
   flex: 1;
 }
 
-.right__dragged-box {
-  cursor: col-resize;
-  width: 5px;
-  border-right: 1px solid var(--color-split-line);
-}
-
-.right__dragged-box:hover {
-  background-color: var(--color-split-line-hover);
-}
-
 /* 弹窗 */
 /* 个人操作弹窗 */
 .person-operations-dialog {
@@ -335,12 +345,8 @@ provide("person-operations-visible", {
   z-index: 111;
 }
 
-
-
-
 /* 盒子状态 */
 .hidden {
   display: none;
 }
-
 </style>

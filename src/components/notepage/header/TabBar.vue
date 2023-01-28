@@ -77,7 +77,9 @@ const tabBarData = [
         </div>
         <!-- 在当前文件夹新建文件 -->
         <div class="tab-bar__tool-button content__button">
-          <el-icon><IEpPlus /></el-icon>
+          <el-tooltip effect="dark" content="新建文件" placement="bottom">
+            <el-icon><IEpPlus /></el-icon>
+          </el-tooltip>
         </div>
       </div>
     </el-scrollbar>
@@ -106,6 +108,8 @@ const tabBarData = [
   display: flex;
   justify-content: space-between;
   padding: 0 8px;
+  /* background-color: #F7F7F7; */
+
 }
 
 .tab-bar .el-scrollbar__view {
@@ -131,6 +135,7 @@ const tabBarData = [
   text-align: center;
   border-radius: 4px;
   color: var(--color-button-text);
+  /* background-color: #F7F7F7; */
 }
 
 .tab-bar__item:hover {
@@ -138,8 +143,8 @@ const tabBarData = [
 }
 
 .tab-bar__item:active {
-  box-shadow: 0 0 2px 1px rgb(29 17 51 / 4%), 0 0 4px 2px rgb(9 32 77 / 12%),
-    0 0 5px -3px rgb(29 17 51 / 12%);
+    box-shadow: var(--box-shadow-tab-bar);
+    background-color: #fff;
 }
 
 .tab-bar__item .item__content {

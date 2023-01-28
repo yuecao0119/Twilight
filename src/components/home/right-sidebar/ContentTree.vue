@@ -63,7 +63,7 @@
               <!-- 目录子项数 -->
               <div class="content__number">
                 <el-tooltip effect="dark" content="子目录数" placement="bottom">
-                  12
+                  1
                 </el-tooltip>
               </div>
               <!-- 新建子项 -->

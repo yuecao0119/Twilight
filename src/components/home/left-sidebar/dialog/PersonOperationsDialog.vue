@@ -65,6 +65,7 @@ const person = {
 /* 个人操作弹窗 */
 .person-card {
   width: 270px;
+  border-radius: 5px;
 }
 
 .person-card .el-card__body {
@@ -163,7 +164,7 @@ const person = {
 .body__footer {
   padding-top: 6px;
   padding-bottom: 6px;
-  box-shadow: var(--color-box-shadow) 0px -1px 0px;
+  box-shadow: var(--box-shadow);
   margin-top: 1px;
 }
 

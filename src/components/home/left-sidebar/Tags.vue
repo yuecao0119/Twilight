@@ -4,7 +4,7 @@
   <!-- 标签 -->
   <el-scrollbar>
     <div class="tags">
-      <div class="split-line"></div>
+      <!-- <div class="split-line"></div> -->
       <div class="twilight-menu__header">
         <div class="header__left-container">
           <!-- 标签icon -->

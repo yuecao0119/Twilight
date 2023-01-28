@@ -1,45 +1,61 @@
 .theme--light {
+// 浅灰色：#F3F3F5;  浅蓝色：#E0EBFF;
+
     // 背景
     --color-bg: #fff;
-    --color-aside-bg: #fff; // #ECF5FF; 
+    --color-aside-bg: #FAFAFA; // #fff; // #ECF5FF; 
     --color-option-bar-bg: #6DA5F7;
     --color-icon-bg-option-bar: #6DA5F7;
     --color-icon-bg-option-bar-hover: #CADBF9;
     --color-icon-bg-option-bar-active: #CADBF9;
-    --color-person-card-bg: #fff;
+    --color-person-card-bg: #FAFAFA;
+    --color-dialog-bg: #FAFAFA;
+
 
     // 文本
     --color-text: #37352F;
     --color-text-dark: #404040;
     --color-text-darker: #7D7C78; 
     --color-text-inactive: #DCE8F8; // #858585;
-    --color-text-active: #A9C9FA;
+    --color-text-active: #0052D9; // #A9C9FA;
+    --color-text-title: #4d7cff;
     --color-icon-text: #37352F;
     --color-icon-text-inactive: #61605C;
     --color-button-text: #73726E;
-    --color-button-text-active: #37352F;
+    --color-button-text-hover: #37352F;
+    --color-button-text-active: #0052D9;
     --color-button-text-dark: #b8b8b8;
     --color-tab-bar-bg: #e7e9eb27;
+
+
 
     // 图标
     --color-icon: #37352F;
     --color-icon-dark: #858585;
     --color-icon-hover: #DCE8F8;
-    --color-icon-active: #A9C9FA;
+    --color-icon-active: #0052D9; // #A9C9FA;
     --color-option-bar-icon: #fff;
     --color-option-bar-icon-hover: #fff;
-    --color-option-bar-icon-active: #409EFF;
+    --color-option-bar-icon-active: #0052D9; // #409EFF;
     --color-button-icon: #73726E;
-    --color-button-icon-hover: #fff;
-    --color-button-icon-active: #fff;
+    --color-button-icon-hover: #0052D9;
+    --color-button-icon-active: #0052D9;
+    --color-big-button-icon: #73726E;
+    --color-big-button-icon-hover: #0052D9;
+    --color-big-button-icon-active: #0052D9;
 
     // 按钮
     --color-button: #fff;
     --color-button-inactive:  #E7E9EB;
-    --color-button-hover: #ECF5FF; // #F5F7FA;
-    --color-button-active: #A9C9FA;
+    --color-button-hover: #F3F3F5; // #ECF5FF; // #F5F7FA;
+    --color-button-active: #E0EBFF; // #A9C9FA;
     --color-small-button: transparent;
-    --color-small-button-hover: #D7E6FB;
+    --color-small-button-hover: #E7E7E7;
+    --color-small-button-active: #cee0ff;// #D7E6FB;
+    --color-big-button: #F3F3F5; // #E7E9EB;
+    --color-big-button-inactive:  #E7E9EB;
+    --color-big-button-hover: #F3F3F5; // #ECF5FF; // #F5F7FA;
+    --color-big-button-active: #E0EBFF; // #A9C9FA;
     --color-collapse-button: transparent; 
     --color-collapse-button-hover: #D7E6FB; 
 
@@ -51,7 +67,10 @@
     --color-border: #DCDFE6;
 
     // 阴影
-    --color-box-shadow: rgba(55, 53, 47, 0.09);
+    --box-shadow: 0px -1px 0px rgba(55, 53, 47, 0.09);
+    --box-shadow-tab-bar:  0 0 0 1px rgb(0 0 0 / 12%);
+    --box-shadow-dialog-footer: 0 -1px 0 0 #e0e3e8, 0 -3px 6px 0 rgba(69, 98, 155, 0.12);
+    --box-shadow-menu-item: 0 1px 3px 0 #d4d9e1;
 }
 
 .theme--dark {

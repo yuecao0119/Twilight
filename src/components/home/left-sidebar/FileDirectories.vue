@@ -5,7 +5,7 @@ show-after延迟出现 -->
   <el-scrollbar>
     <!-- 文件目录 -->
     <div class="file-directories__file-content">
-      <span class="split-line"></span>
+      <!-- <span class="split-line"></span> -->
       <div class="twilight-menu__header">
         <div class="header__left-container">
           <!-- 根目录图标 -->

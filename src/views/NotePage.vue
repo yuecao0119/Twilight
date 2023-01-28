@@ -10,7 +10,7 @@ import NoteToolBar from "../components/notepage/header/NoteToolBar.vue";
       <!-- 选项卡列表 -->
       <TabBar />
       <!-- 分割线 -->
-      <span class="split-line"></span>
+      <!-- <span class="split-line"></span> -->
       <!-- 文件工具栏 -->
       <NoteToolBar />
     </el-header>
